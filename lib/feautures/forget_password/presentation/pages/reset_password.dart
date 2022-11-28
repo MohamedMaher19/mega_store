@@ -2,14 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:mega_store/core/resources/color_manager.dart';
 import 'package:mega_store/core/resources/routes_manager.dart';
 import 'package:mega_store/core/utils/custom_text.dart';
-
 import '../../../../core/resources/assets_manager.dart';
-import '../../../../core/resources/extensions.dart';
 import '../../../../core/resources/string_manager.dart';
 import '../../../../core/resources/values_manager.dart';
 import '../../../../core/utils/login_register_button.dart';
 import '../../../login/presentation/widgets/default_form_field.dart';
-import '../../../login/presentation/widgets/face_google_regis.dart';
 
 
 class ResetPasswordScreen extends StatelessWidget {

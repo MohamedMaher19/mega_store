@@ -68,6 +68,7 @@ class FavortesPage extends StatelessWidget {
                                 '\$ 299.90',
                                 style: TextStyle(
                                   fontSize: 12.0.sp,
+                                  fontFamily:'Poppins' ,
                                   color: Colors.grey,
                                   decoration: TextDecoration.lineThrough,
 

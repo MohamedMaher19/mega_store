@@ -11,7 +11,7 @@ import 'core/resources/routes_manager.dart';
 void main() {
   runApp( DevicePreview(
       enabled: !kReleaseMode,
-      builder: (context) => MyApp()));
+      builder: (context) => const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               title: 'Mega Store',
               routes: Routes.routes,
-              initialRoute: Routes.layoutPage);
+              initialRoute: Routes.loginScreen);
         },
       ),
     );

@@ -11,6 +11,7 @@ class ImageAssets {
   static const String image6 = 'assets/images/alyssa-strohmann-TS--uNw-JqE-unsplash.jpg';
   static const String slider = 'assets/images/slider.png';
   static const String unsplash = 'assets/images/markus-spiske-wL7pwimB78Q-unsplash.jpg';
+  static const String logo = 'assets/images/MEGA-158-×-42-px-158-×-42-px-158-×-42-px-5 1.svg';
 
 
 

@@ -20,19 +20,25 @@ class LoginRegisterButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
+
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5),),
+            borderRadius: BorderRadius.circular(5.r),),
           primary: buttonColor,
 
-          minimumSize: Size(320.w, 65.h),
+          minimumSize: Size(373.w, 57.h),
         ),
         onPressed: onPressed,
-        child: TextUtils(
-          fontFamily: fontFamily,
-          text: text,
-          fontSize: 14.sp,
-          fontWeight: FontWeight.bold,
-          color: textColor,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextUtils(
+              fontFamily: fontFamily,
+              text: text,
+              fontSize: 14.sp,
+              fontWeight: FontWeight.bold,
+              color: textColor,
+            ),
+          ],
         ));
   }
 }
