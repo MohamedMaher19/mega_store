@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store/core/resources/color_manager.dart';
 import 'package:mega_store/core/utils/appbar.dart';
 
@@ -28,24 +29,24 @@ class CategoryNamePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 1,
-        title: Text('Category Name' , style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,fontFamily: 'Poppins', color: Colors.black),),
+        title: Text('Category Name' , style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold,fontFamily: 'Poppins', color: Colors.black),),
         leading: GestureDetector(
           onTap: (){
             Navigator.pop(context);
           },
-          child: Icon(Icons.arrow_back_ios_new_rounded , color: ColorManager.gGrey,size: 20,),
+          child: Icon(Icons.arrow_back_ios_new_rounded , color: ColorManager.gGrey,size: 20.sp,),
         ) ,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(15.0),
+          padding:  EdgeInsets.all(15.0.w),
           child: GridView.count(
               scrollDirection: Axis.vertical,
               crossAxisCount: 2,
               shrinkWrap: true,
-              mainAxisSpacing:1.0 ,
-              crossAxisSpacing: 20.0,
-              childAspectRatio: 1 / 1.75 ,
+              mainAxisSpacing:1.0 .h,
+              crossAxisSpacing: 20.0.w,
+              childAspectRatio: 1 / 1.75.h ,
               physics: NeverScrollableScrollPhysics(),
               children: List.generate(myImges.length, (index) =>
                   Column(
@@ -56,12 +57,12 @@ class CategoryNamePage extends StatelessWidget {
                         children:[
                           Image(
                             image: AssetImage(myImges[index]),
-                            height:200,
+                            height:200.h,
                             width: double.infinity,
                             fit: BoxFit.cover,
                           ),
                           Container(
-                              padding: EdgeInsets.symmetric(horizontal: 5.0,vertical: 5.0),
+                              padding: EdgeInsets.symmetric(horizontal: 5.0.w,vertical: 5.0.h),
                               child: Icon(Icons.favorite_border , color: Colors.white,)
                           ),
                         ],
@@ -75,8 +76,8 @@ class CategoryNamePage extends StatelessWidget {
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                              fontSize: 14.0,
-                              height: 1.3,
+                              fontSize: 14.0.sp,
+                              height: 1.3.h,
                             ),
 
                           ),
@@ -88,17 +89,17 @@ class CategoryNamePage extends StatelessWidget {
                               Text(
                                 '\$ 299.90',
                                 style: TextStyle(
-                                  fontSize: 12.0,
+                                  fontSize: 12.0.sp,
                                   color: Colors.grey,
                                   decoration: TextDecoration.lineThrough,
 
                                 ),
                               ),
-                              SizedBox(width: 5.0,),
+                              SizedBox(width: 5.0.w,),
                               Text(
                                 '25% off',
                                 style: TextStyle(
-                                  fontSize: 10.0,
+                                  fontSize: 10.0.sp,
                                   color: Colors.red,
                                 ),
                               ),

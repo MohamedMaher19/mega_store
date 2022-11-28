@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store/core/resources/color_manager.dart';
 import 'package:mega_store/core/resources/routes_manager.dart';
 import 'package:mega_store/core/utils/appbar.dart';
@@ -13,16 +14,16 @@ class CartPage extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 1,
-          title: Text('Your Cart' , style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,fontFamily: 'Poppins', color: Colors.black),),
+          title: Text('Your Cart' , style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold,fontFamily: 'Poppins', color: Colors.black),),
           leading: GestureDetector(
             onTap: (){
               Navigator.pop(context);
             },
-            child: Icon(Icons.arrow_back_ios_new_rounded , color: ColorManager.gGrey,size: 20,),
+            child: Icon(Icons.arrow_back_ios_new_rounded , color: ColorManager.gGrey,size: 20.sp,),
           ) ,
         ),
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding:  EdgeInsets.all(8.0.h),
           child: SizedBox(
             width: double.infinity,
             child: SingleChildScrollView(
@@ -30,45 +31,45 @@ class CartPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: 300,
+                    height: 300.h,
                     child: ListView.separated(
                       itemBuilder: (context, index) => Card(
                         child: Container(
                           decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(10)
+                            borderRadius: BorderRadius.circular(10.r)
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.only(left: 15 , top: 10.0,bottom: 10.0),
+                            padding:  EdgeInsets.only(left: 15.w , top: 10.0.h,bottom: 10.0.h),
                             child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 // mainAxisSize: MainAxisSize.max,
                                 children: [
                                   SizedBox(
-                                    height: 90,
+                                    height: 90.h,
 
                                     child: Image.asset(
                                         "assets/images/image2.jpg" , fit: BoxFit.cover,),
                                   ),
-                                  const SizedBox(
-                                    width: 10,
+                                   SizedBox(
+                                    width: 7.w,
                                   ),
                                   Column(
                                     children: [
                                       Row(
-                                        children: const [
+                                        children:  [
                                           Text(
                                             "Nike Air Jordan",
                                           ),
                                           SizedBox(
-                                            width: 60,
+                                            width: 60.w,
                                           ),
                                           Icon(Icons.favorite , color: Colors.red,),
-                                          SizedBox(width: 10,),
+                                          SizedBox(width: 10.w,),
                                           Icon(Icons.delete_outline),
                                         ],
                                       ),
-                                      const SizedBox(height: 40),
+                                       SizedBox(height: 40.h),
                                       Row(
                                         mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -77,8 +78,8 @@ class CartPage extends StatelessWidget {
                                             " 699 ",
                                             style: TextStyle(color: Colors.lightBlue),
                                           ),
-                                          const SizedBox(
-                                            width: 90,
+                                           SizedBox(
+                                            width: 90.w,
                                           ),
                                           Container(
                                             decoration: BoxDecoration(
@@ -91,8 +92,8 @@ class CartPage extends StatelessWidget {
                                               children: [
                                                 const Icon(Icons.remove),
                                                 Container(
-                                                    height: 25,
-                                                    width: 30,
+                                                    height: 25.h,
+                                                    width: 30.w,
                                                     color: ColorManager.number,
                                                     child: const Center(
                                                         child: Text("1"))),
@@ -109,20 +110,20 @@ class CartPage extends StatelessWidget {
                         ),
                       ),
                       separatorBuilder: (context, index) => Container(
-                        height: 1,
+                        height: 1.h,
                       ),
                       itemCount: 5,
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
+                   SizedBox(
+                    height: 20.h,
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(5.0),
+                    padding:  EdgeInsets.all(5.0.h),
                     child: Container(
-                      padding: const EdgeInsets.only(left: 10),
-                      height: 50,
-                      width: double.infinity,
+                      padding:  EdgeInsets.only(left: 10.w),
+                      height: 50.h,
+                      width: double.infinity.w,
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey.withOpacity(.5)),
                           borderRadius: BorderRadius.circular(3)),
@@ -134,8 +135,8 @@ class CartPage extends StatelessWidget {
                             style: TextStyle(color: Colors.grey.withOpacity(.5)),
                           ),
                           Container(
-                            height: 60,
-                            width: 100,
+                            height: 60.h,
+                            width: 100.w,
                             decoration: const BoxDecoration(
                                 color: ColorManager.cartButton,
                                 borderRadius: BorderRadius.only(
@@ -152,10 +153,10 @@ class CartPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: 20.h,),
                   Card(
                       child: Padding(
-                        padding: const EdgeInsets.all(12.0),
+                        padding:  EdgeInsets.all(12.0.h),
                         child: Container(
                           child: Column(
                             children: [
@@ -166,7 +167,7 @@ class CartPage extends StatelessWidget {
                                   Text('\$290' ),
                                 ],
                               ),
-                              SizedBox(height: 20,),
+                              SizedBox(height: 20.h,),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: const [
@@ -174,7 +175,7 @@ class CartPage extends StatelessWidget {
                                   Text('\$40' ),
                                 ],
                               ),
-                              SizedBox(height: 20,),
+                              SizedBox(height: 20.h,),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: const [
@@ -182,7 +183,7 @@ class CartPage extends StatelessWidget {
                                   Text('\$128' ),
                                 ],
                               ),
-                              SizedBox(height: 20,),
+                              SizedBox(height: 20.h,),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: const [
@@ -190,14 +191,14 @@ class CartPage extends StatelessWidget {
                                   Text('\$40' ),
                                 ],
                               ),
-                              SizedBox(height: 10,),
+                              SizedBox(height: 10.h,),
                             ],
                           ),
                         ),
                       )),
 
-                  const SizedBox(
-                    height: 15,
+                   SizedBox(
+                    height: 15.h,
                   ),
                   Center(
                     child: LoginRegisterButton(
@@ -205,7 +206,7 @@ class CartPage extends StatelessWidget {
                       onPressed: () {
                         Navigator.pushNamed(context, Routes.shipTo);
                       },
-                      fontSize: 15,
+                      fontSize: 15.sp,
                       textColor: ColorManager.sWhite,
                       fontFamily: 'Poppins',
                       buttonColor: ColorManager.cartButton,

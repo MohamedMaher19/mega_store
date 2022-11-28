@@ -1,25 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mega_store/core/resources/assets_manager.dart';
 
 class SaleItem extends StatelessWidget {
   SaleItem({Key? key}) : super(key: key);
 
-  final myImges = [
-    'assets/images/slider.png',
-    'assets/images/alyssa-strohmann-TS--uNw-JqE-unsplash.jpg',
-    'assets/images/markus-spiske-wL7pwimB78Q-unsplash.jpg',
-    'assets/images/alyssa-strohmann-TS--uNw-JqE-unsplash.jpg',
-    'assets/images/markus-spiske-wL7pwimB78Q-unsplash.jpg',
-    'assets/images/alyssa-strohmann-TS--uNw-JqE-unsplash.jpg',
-    'assets/images/markus-spiske-wL7pwimB78Q-unsplash.jpg',
-    'assets/images/alyssa-strohmann-TS--uNw-JqE-unsplash.jpg',
 
-
-  ];
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 200,
+    return SizedBox(
+      height: 200.h,
       child: ListView.separated(
               scrollDirection: Axis.horizontal,
               physics: BouncingScrollPhysics(),
@@ -33,12 +24,12 @@ class SaleItem extends StatelessWidget {
                       children:[
                         Image(
                           image: AssetImage(myImges[index]),
-                          height: 120.0,
-                          width: 120.0,
+                          height: 120.0.h,
+                          width: 120.0.w,
                           fit: BoxFit.cover,
                         ),
                           Container(
-                            padding: EdgeInsets.symmetric(horizontal: 5.0,vertical: 5.0),
+                            padding: EdgeInsets.symmetric(horizontal: 5.0.w,vertical: 5.0.h),
                             child: Icon(Icons.favorite_border , color: Colors.white,)
                           ),
                       ],
@@ -52,31 +43,31 @@ class SaleItem extends StatelessWidget {
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                            fontSize: 14.0,
-                            height: 1.3,
+                            fontSize: 14.0.sp,
+                            height: 1.3.h,
                           ),
 
                         ),
-                        SizedBox(height: 3,),
+                        SizedBox(height: 3.h,),
                         Text('\$ 299.90'),
-                        SizedBox(height: 3,),
+                        SizedBox(height: 3.h,),
                         Row(
                           children:[
 
                             Text(
                               '\$ 500.50',
                               style: TextStyle(
-                                fontSize: 12.0,
+                                fontSize: 12.0.sp,
                                 color: Colors.grey,
                                 decoration: TextDecoration.lineThrough,
 
                               ),
                             ),
-                            SizedBox(width: 5.0,),
+                            SizedBox(width: 5.0.w,),
                               Text(
                                 '25% off',
                                 style: TextStyle(
-                                  fontSize: 10.0,
+                                  fontSize: 10.0.sp,
                                   color: Colors.red,
                                 ),
                               ),
@@ -91,7 +82,7 @@ class SaleItem extends StatelessWidget {
 
               },
 
-              separatorBuilder: (context , index) => SizedBox(width:10,),
+              separatorBuilder: (context , index) => SizedBox(width:10.w,),
               itemCount: myImges.length),
     );
 

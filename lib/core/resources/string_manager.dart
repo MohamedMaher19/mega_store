@@ -10,9 +10,15 @@ class AppStrings {
   static const String dontHave = 'Don\'t have an account ?';
   static const String haveAccount = 'have an account ?';
   static const String register = 'Register';
+  static const String allCategories = 'All Categories';
+  static const String category = 'Category';
   static const String enterPassword = 'please enter your password';
   static const String password = 'Password';
   static const String signIn = 'Sign In';
+  static const String backHome = 'Back To Home ';
+  static const String success = 'Success';
+  static const String thanks = 'thank you for shopping From';
+  static const String mEGAStore = 'MEGA Store';
   static const String signInToCont = 'Sign in to Continue';
   static const String validEmail = 'Enter valid email';
   static const String yourEmail = 'Your Email';
@@ -42,6 +48,9 @@ class AppStrings {
   static const String phone = '(307) 555-0133';
   static const String defaultEmail = 'rex4dom@gmail.com';
   static const String emailMessage = 'We Will Send verification to your New Email';
+  static const String search = 'Search Products';
+  static const String flash = 'Flash Sale';
+  static const String mayLike = 'You May Like';
 
 
 }

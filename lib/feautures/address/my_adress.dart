@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store/core/resources/color_manager.dart';
 import 'package:mega_store/core/resources/routes_manager.dart';
 import 'package:mega_store/core/utils/appbar.dart';
@@ -14,12 +15,12 @@ class MyAddress extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 1,
-        title: Text('Address' , style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,fontFamily: 'Poppins', color: Colors.black),),
+        title: Text('Address' , style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold,fontFamily: 'Poppins', color: Colors.black),),
         leading: GestureDetector(
           onTap: (){
             Navigator.pop(context);
           },
-          child: Icon(Icons.arrow_back_ios_new_rounded , color: ColorManager.gGrey,size: 20,),
+          child: Icon(Icons.arrow_back_ios_new_rounded , color: ColorManager.gGrey,size: 20.sp,),
         ) ,
       ),
       body: SingleChildScrollView(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store/core/resources/color_manager.dart';
 import 'package:mega_store/core/utils/custom_text.dart';
 
@@ -35,14 +36,15 @@ class RegisterScreen extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        SizedBox(height: 20.h,),
                         Padding(
-                          padding: const EdgeInsets.only(left: AppSize.s20),
+                          padding:  EdgeInsets.only(left: AppSize.s20.w),
                           child: Image.asset(ImageAssets.megaLogo ,fit: BoxFit.fill,),),
-                        SizedBox(height: AppSize.s30,),
-                        TextUtils(text: AppStrings.getStarted, fontSize: AppSize.s16, fontWeight: FontWeight.bold, color: ColorManager.wellcmeTo),
-                        SizedBox(height: AppSize.s10,),
-                        TextUtils(text: AppStrings.creatAcoount, fontSize: AppSize.s12, fontWeight: FontWeight.normal, color: ColorManager.gGrey),
-                        SizedBox(height: AppSize.s20,),
+                        SizedBox(height: AppSize.s30.h,),
+                        TextUtils(text: AppStrings.getStarted, fontSize: AppSize.s16.sp, fontWeight: FontWeight.bold, color: ColorManager.wellcmeTo),
+                        SizedBox(height: AppSize.s10.h,),
+                        TextUtils(text: AppStrings.creatAcoount, fontSize: AppSize.s12.sp, fontWeight: FontWeight.normal, color: ColorManager.gGrey),
+                        SizedBox(height: AppSize.s20.h,),
 
                         defaultFormField(
                           border: const OutlineInputBorder(),
@@ -58,7 +60,7 @@ class RegisterScreen extends StatelessWidget {
                           label: AppStrings.fullName,
                           prefix: Icons.person_outline,
                         ),
-                        SizedBox(height: 15.0,),
+                        SizedBox(height: 15.0.h,),
                         defaultFormField(
                           border: const OutlineInputBorder(),
                           controller: emailController,
@@ -74,7 +76,7 @@ class RegisterScreen extends StatelessWidget {
                           label: AppStrings.yourEmail,
                           prefix: Icons.email_outlined,
                         ),
-                        SizedBox(height: 15.0,),
+                        SizedBox(height: 15.0.h,),
 
                         defaultFormField(
                           border: const OutlineInputBorder(),
@@ -90,7 +92,7 @@ class RegisterScreen extends StatelessWidget {
                           label: AppStrings.yourPhone,
                           prefix: Icons.phone,
                         ),
-                        SizedBox(height: 15.0,),
+                        SizedBox(height: 15.0.h,),
 
                         defaultFormField(
                           border: const OutlineInputBorder(),
@@ -106,7 +108,7 @@ class RegisterScreen extends StatelessWidget {
                           label: AppStrings.password,
                           prefix: Icons.lock_outline,
                         ),
-                        SizedBox(height: 15.0,),
+                        SizedBox(height: 15.0.h,),
 
 
                         defaultFormField(
@@ -129,7 +131,7 @@ class RegisterScreen extends StatelessWidget {
                           label: AppStrings.confirmPass,
                           prefix: Icons.lock_outline,
                         ),
-                        SizedBox(height: AppSize.s30,),
+                        SizedBox(height: AppSize.s30.h,),
 
                         LoginRegisterButton(
                           text: AppStrings.signIn,
@@ -140,14 +142,14 @@ class RegisterScreen extends StatelessWidget {
                               print('hhello');
                             }
 
-                          }, buttonColor: ColorManager.buttonColor, fontSize: AppSize.s20, textColor: ColorManager.sWhite, fontFamily: AppStrings.fontFamily,
+                          }, buttonColor: ColorManager.buttonColor, fontSize: AppSize.s20.sp, textColor: ColorManager.sWhite, fontFamily: AppStrings.fontFamily,
                         ),
 
                         SizedBox(height: AppSize.s10,),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            TextUtils(text:AppStrings.haveAccount , fontSize: AppSize.s12, fontWeight: FontWeight.normal, color: ColorManager.gGrey),
+                            TextUtils(text:AppStrings.haveAccount , fontSize: AppSize.s12.sp, fontWeight: FontWeight.normal, color: ColorManager.gGrey),
 
 
                             defaultTextBottom(

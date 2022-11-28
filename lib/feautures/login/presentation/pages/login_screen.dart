@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store/core/resources/color_manager.dart';
 import 'package:mega_store/core/utils/custom_text.dart';
 import 'package:mega_store/feautures/register/presentation/pages/register_screen.dart';
@@ -27,22 +28,23 @@ class LoginScreen extends StatelessWidget {
               body: Center(
                 child: SingleChildScrollView(
                   child: Padding(
-                    padding: const EdgeInsets.all(AppSize.s20),
+                    padding:  EdgeInsets.all(AppSize.s20.sp),
                     child: Form(
                       key: formkey,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
+                          SizedBox(height: 20.h,),
                           Padding(
                             padding: const EdgeInsets.only(left: AppSize.s20),
                             child: Image.asset(ImageAssets.megaLogo ,fit: BoxFit.fill,),
                           ),
-                          SizedBox(height: AppSize.s20,),
-                          TextUtils(text: AppStrings.welcome, fontSize: AppSize.s16, fontWeight: FontWeight.bold, color: ColorManager.wellcmeTo),
+                          SizedBox(height: AppSize.s20.h,),
+                          TextUtils(text: AppStrings.welcome, fontSize: AppSize.s16.sp, fontWeight: FontWeight.bold, color: ColorManager.wellcmeTo),
                           SizedBox(
-                            height: AppSize.s10,
+                            height: AppSize.s10.h,
                           ),
-                          TextUtils(text: AppStrings.signInToCont, fontSize: AppSize.s12, fontWeight: FontWeight.normal, color: ColorManager.gGrey),
+                          TextUtils(text: AppStrings.signInToCont, fontSize: AppSize.s12.sp, fontWeight: FontWeight.normal, color: ColorManager.gGrey),
                           SizedBox(
                             height: AppSize.s20,
                           ),
@@ -62,7 +64,7 @@ class LoginScreen extends StatelessWidget {
                             label: AppStrings.yourEmail,
                             prefix: Icons.email_outlined,
                           ),
-                          SizedBox(height: 15.0,),
+                          SizedBox(height: 15.0.h,),
                           defaultFormField(
                             border: const OutlineInputBorder(),
                             onFieldSubmitted: (value){
@@ -81,7 +83,7 @@ class LoginScreen extends StatelessWidget {
                             label: AppStrings.password,
                             prefix: Icons.lock_outline,
                           ),
-                          SizedBox(height: AppSize.s30,),
+                          SizedBox(height: AppSize.s30.h,),
 
                           LoginRegisterButton(
                                 text: AppStrings.signIn,
@@ -94,42 +96,42 @@ class LoginScreen extends StatelessWidget {
                                     print('hhello');
                                   }
 
-                                }, buttonColor: ColorManager.buttonColor, fontSize: AppSize.s20, textColor: ColorManager.sWhite, fontFamily: AppStrings.fontFamily,
+                                }, buttonColor: ColorManager.buttonColor, fontSize: AppSize.s20.sp, textColor: ColorManager.sWhite, fontFamily: AppStrings.fontFamily,
                                 ),
 
-                          SizedBox(height: AppSize.s15),
+                          SizedBox(height: AppSize.s15.sp),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Container(
-                                height: 1,
-                                width: 140,
+                                height: 1.h,
+                                width: 140.w,
                                 color: Colors.grey.withOpacity(0.4),
                               ),
-                              TextUtils(text: 'OR', fontSize: 15, fontWeight: FontWeight.normal, color: Colors.grey),
+                              TextUtils(text: 'OR', fontSize: 15.sp, fontWeight: FontWeight.normal, color: Colors.grey),
                               Container(
-                                height: 1,
-                                width: 140,
+                                height: 1.h,
+                                width: 140.w,
                                 color: Colors.grey.withOpacity(0.4),
                               ),
 
                             ],
                           ),
-                          SizedBox(height: AppSize.s15,),
-                          FaceGoogleButton(text:AppStrings.googleSign , onPressed: () {  }, fontSize: AppSize.s14, textColor: ColorManager.gGrey, fontFamily: AppStrings.fontFamily, buttonColor: ColorManager.light, imagePath: ImageAssets.google,),
-                          SizedBox(height: AppSize.s10,),
-                          FaceGoogleButton(text:AppStrings.faceBookSign , onPressed: () {  }, fontSize: AppSize.s14, textColor: ColorManager.gGrey, fontFamily: AppStrings.fontFamily, buttonColor: ColorManager.light, imagePath: ImageAssets.faceBook,),
-                          SizedBox(height: AppSize.s10,),
+                          SizedBox(height: AppSize.s15.h,),
+                          FaceGoogleButton(text:AppStrings.googleSign , onPressed: () {  }, fontSize: AppSize.s14.sp, textColor: ColorManager.gGrey, fontFamily: AppStrings.fontFamily, buttonColor: ColorManager.light, imagePath: ImageAssets.google,),
+                          SizedBox(height: AppSize.s10.h,),
+                          FaceGoogleButton(text:AppStrings.faceBookSign , onPressed: () {  }, fontSize: AppSize.s14.sp, textColor: ColorManager.gGrey, fontFamily: AppStrings.fontFamily, buttonColor: ColorManager.light, imagePath: ImageAssets.faceBook,),
+                          SizedBox(height: AppSize.s10.h,),
                           InkWell(
                             onTap: (){
                               Navigator.pushNamed(context, Routes.forgetPasswordScreen);
 
                             },
-                              child: TextUtils(text:AppStrings.forgetPass , fontSize: AppSize.s12, fontWeight: FontWeight.bold, color: ColorManager.buttonColor)),
+                              child: TextUtils(text:AppStrings.forgetPass , fontSize: AppSize.s12.sp, fontWeight: FontWeight.bold, color: ColorManager.buttonColor)),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              TextUtils(text:AppStrings.dontHave , fontSize: AppSize.s12, fontWeight: FontWeight.normal, color: ColorManager.gGrey),
+                              TextUtils(text:AppStrings.dontHave , fontSize: AppSize.s12.sp, fontWeight: FontWeight.normal, color: ColorManager.gGrey),
 
 
                               defaultTextBottom(

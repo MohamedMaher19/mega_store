@@ -1,21 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mega_store/core/resources/assets_manager.dart';
 import 'package:mega_store/core/resources/routes_manager.dart';
+import 'package:mega_store/core/resources/string_manager.dart';
 
 class CategoryItem extends StatelessWidget {
-   CategoryItem({Key? key}) : super(key: key);
+   const CategoryItem({Key? key}) : super(key: key);
 
-  final myImges = [
-    'assets/images/slider.png',
-    'assets/images/alyssa-strohmann-TS--uNw-JqE-unsplash.jpg',
-    'assets/images/markus-spiske-wL7pwimB78Q-unsplash.jpg',
-    'assets/images/alyssa-strohmann-TS--uNw-JqE-unsplash.jpg',
-    'assets/images/markus-spiske-wL7pwimB78Q-unsplash.jpg',
-    'assets/images/alyssa-strohmann-TS--uNw-JqE-unsplash.jpg',
-    'assets/images/markus-spiske-wL7pwimB78Q-unsplash.jpg',
-    'assets/images/alyssa-strohmann-TS--uNw-JqE-unsplash.jpg',
-
-
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -24,26 +15,26 @@ class CategoryItem extends StatelessWidget {
         Navigator.pushNamed(context, Routes.allCategoryPage);
 
       },
-      child: Container(
-        height: 120,
+      child: SizedBox(
+        height: 120.h,
         child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             itemBuilder: (context , index) {
               return Column(
                 children: [
                   CircleAvatar(
-                    radius: 40,
+                    radius: 40.r,
                     backgroundImage:AssetImage(myImges[index]),
                     ),
-                  SizedBox(height: 5,),
-                  Text('Category')
+                  SizedBox(height: 5.h,),
+                  const Text(AppStrings.category)
                 ],
               );
 
       },
 
-            separatorBuilder: (context , index) => SizedBox(width: 10.0,),
+            separatorBuilder: (context , index) => SizedBox(width: 10.0.w,),
             itemCount: myImges.length)),
     );
 

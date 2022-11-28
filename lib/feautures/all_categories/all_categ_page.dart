@@ -1,38 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mega_store/core/resources/assets_manager.dart';
 import 'package:mega_store/core/resources/color_manager.dart';
 import 'package:mega_store/core/resources/routes_manager.dart';
+import 'package:mega_store/core/resources/string_manager.dart';
 import 'package:mega_store/core/utils/appbar.dart';
 
 class AllCategoryPage extends StatelessWidget {
    AllCategoryPage({Key? key}) : super(key: key);
 
-  final myImges = [
-    'assets/images/image1.jpg',
-    'assets/images/image2.jpg',
-    'assets/images/image3.jpg',
-    'assets/images/image4.jpg',
-    'assets/images/markus-spiske-wL7pwimB78Q-unsplash.jpg',
-    'assets/images/alyssa-strohmann-TS--uNw-JqE-unsplash.jpg',
-    'assets/images/markus-spiske-wL7pwimB78Q-unsplash.jpg',
-    'assets/images/image1.jpg',
-    'assets/images/image2.jpg',
-    'assets/images/image3.jpg',
-    'assets/images/image4.jpg',
-    'assets/images/alyssa-strohmann-TS--uNw-JqE-unsplash.jpg',
-    'assets/images/image4.jpg',
-    'assets/images/markus-spiske-wL7pwimB78Q-unsplash.jpg',
-    'assets/images/alyssa-strohmann-TS--uNw-JqE-unsplash.jpg',
-    'assets/images/markus-spiske-wL7pwimB78Q-unsplash.jpg',
-    'assets/images/markus-spiske-wL7pwimB78Q-unsplash.jpg',
-    'assets/images/alyssa-strohmann-TS--uNw-JqE-unsplash.jpg',
-    'assets/images/markus-spiske-wL7pwimB78Q-unsplash.jpg',
-    'assets/images/image1.jpg',
-    'assets/images/image2.jpg',
-    'assets/images/image3.jpg',
-    'assets/images/image4.jpg',
-
-
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -40,17 +16,17 @@ class AllCategoryPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 1,
-        title: Text('All Categories' , style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,fontFamily: 'Poppins', color: Colors.black),),
+        title: Text(AppStrings.allCategories , style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold,fontFamily: 'Poppins', color: Colors.black),),
         leading: GestureDetector(
           onTap: (){
             Navigator.pop(context);
           },
-          child: Icon(Icons.arrow_back_ios_new_rounded , color: ColorManager.gGrey,size: 20,),
+          child: Icon(Icons.arrow_back_ios_new_rounded , color: ColorManager.gGrey,size: 20.sp,),
         ) ,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding:  EdgeInsets.all(10.0.sm),
           child: InkWell(
             onTap: (){
               Navigator.pushNamed(context, Routes.categoryNamePage);
@@ -60,19 +36,19 @@ class AllCategoryPage extends StatelessWidget {
               scrollDirection: Axis.vertical,
                 crossAxisCount: 3,
                 shrinkWrap: true,
-                mainAxisSpacing:1.0 ,
-                crossAxisSpacing: 10.0,
-                childAspectRatio: 1 / 1.3 ,
-                physics: NeverScrollableScrollPhysics(),
+                mainAxisSpacing:1.0.h ,
+                crossAxisSpacing: 10.0.w,
+                childAspectRatio: 1 / 1.3.h ,
+                physics: const NeverScrollableScrollPhysics(),
                 children: List.generate(myImges.length, (index) =>
                     Column(
                       children: [
                         CircleAvatar(
-                          radius: 50,
+                          radius: 50.w,
                           backgroundImage:AssetImage(myImges[index]),
                         ),
-                        SizedBox(height: 5,),
-                        Text('Category')
+                        SizedBox(height: 5.h,),
+                        const Text(AppStrings.category)
                       ],
                     )
                 ),

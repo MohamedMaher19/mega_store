@@ -1,53 +1,43 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mega_store/core/resources/assets_manager.dart';
 import 'package:mega_store/core/resources/color_manager.dart';
+import 'package:mega_store/core/resources/string_manager.dart';
 import 'package:mega_store/feautures/home/presentation/widgets/bade_widget.dart';
 import 'package:mega_store/feautures/home/presentation/widgets/categry_item.dart';
+import 'package:mega_store/feautures/home/presentation/widgets/indicator.dart';
 import 'package:mega_store/feautures/home/presentation/widgets/may_like_item.dart';
 import 'package:mega_store/feautures/home/presentation/widgets/sale_item.dart';
-import 'package:mega_store/feautures/home/presentation/widgets/search_bar.dart';
-import 'package:mega_store/feautures/login/presentation/widgets/default_form_field.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 
 class HomePage extends StatefulWidget {
-   HomePage({Key? key}) : super(key: key);
+   const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-   int activeIndex = 0;
 
-   final controller = CarouselController();
    var nameController = TextEditingController();
-
-
-   final myImges = [
-    'assets/images/image3.jpg',
-    'assets/images/image4.jpg',
-    'assets/images/slider.png',
-    'assets/images/markus-spiske-wL7pwimB78Q-unsplash.jpg',
-
-  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Padding(
-          padding: const EdgeInsets.all(15.0),
+          padding:  EdgeInsets.all(15.0.w),
           child: Column (
             crossAxisAlignment: CrossAxisAlignment.start,
 
             children: [
-              SizedBox(height: 20,),
+              SizedBox(height: 20.h,),
 
-              Container(
-                width: 400,
-                height: 70,
+              SizedBox(
+                width: 400.w,
+                height: 70.h,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -55,26 +45,26 @@ class _HomePageState extends State<HomePage> {
                       decoration: BoxDecoration(
                           color: ColorManager.textField,
 
-                          borderRadius: BorderRadius.circular(10)
+                          borderRadius: BorderRadius.circular(10.r)
                       ),
-                      height:50,
-                      width: 250,
+                      height:50.h,
+                      width: 280.w,
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding:  EdgeInsets.all(8.0.h),
                         child: Row(
                           children: [
-                            Icon(Icons.search),
-                            SizedBox(width: 15,),
-                            Text('Search Products')
+                            const Icon(Icons.search),
+                            SizedBox(width: 10.w,),
+                             const Text(AppStrings.search)
                           ],
                         ),
                       ),
                     ),
                     // TextFormField(),
-                    BadgeWidget()  ],
+                    const BadgeWidget()  ],
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 10.h,),
 
               CarouselSlider.builder(
               itemCount: myImges.length,
@@ -83,14 +73,14 @@ class _HomePageState extends State<HomePage> {
                 return buildImage(imageList,index);
                   },
                   options: CarouselOptions(
-                    height: 250.0,
+                    height: 250.0.h,
                     viewportFraction: 1.0,
                     initialPage: 0,
                     enableInfiniteScroll: true,
                     reverse: false,
                     autoPlay: true,
-                    autoPlayInterval: Duration(seconds: 4),
-                    autoPlayAnimationDuration: Duration(seconds: 1),
+                    autoPlayInterval: const Duration(seconds: 4),
+                    autoPlayAnimationDuration: const Duration(seconds: 1),
                     autoPlayCurve: Curves.fastOutSlowIn,
                       onPageChanged: (index, reason) {
                           setState(() => activeIndex = index);},
@@ -98,27 +88,26 @@ class _HomePageState extends State<HomePage> {
 
 
                   )),
-              SizedBox(height: 10,),
+              SizedBox(height: 10.h,),
               Center(child: buildIndicator()),
-              SizedBox(height: 10,),
+              SizedBox(height: 10.h,),
 
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: const [
                   CategoryItem(),
                 ],
               ),
 
-              SizedBox(height: 10,),
+              SizedBox(height: 10.h,),
               SizedBox(
-                width: double.infinity,
-                child: Image.asset('assets/images/advertise.png'),
+                child: Image.asset(ImageAssets.clockImage , fit: BoxFit.cover,width: double.infinity,),
               ),
-              SizedBox(height: 15,),
-              Text('Flash Sale'),
-              SizedBox(height: 15,),
+              SizedBox(height: 15.h,),
+              const Text(AppStrings.flash),
+              SizedBox(height: 15.h,),
               SaleItem(),
-              Text('You May Like'),
+              const Text(AppStrings.mayLike),
               MayLikeItem()
 
 
@@ -128,121 +117,13 @@ class _HomePageState extends State<HomePage> {
       ) );
   }
 
-   Widget buildImage(String urlImage, int index) =>
-       Container(child: Image.asset(urlImage, fit: BoxFit.fill));
 
-   Widget buildIndicator() => AnimatedSmoothIndicator(
-     onDotClicked: animateToSlide,
-     effect: ExpandingDotsEffect(dotWidth: 10,dotHeight: 10, activeDotColor: ColorManager.indicator),
-     activeIndex: activeIndex,
-     count: myImges.length,
-   );
-
-   void animateToSlide(int index) => controller.animateToPage(index);
 }
 
 
 
 
-    // Widget buildGridViewProduct (ProductModel model , context ) => Container(
-    //   color: Colors.white,
-    //   child: Column(
-    //     crossAxisAlignment: CrossAxisAlignment.start,
-    //     children: [
-    //
-    //       Stack(
-    //         alignment: AlignmentDirectional.bottomStart,
-    //         children:[
-    //           Image(
-    //
-    //             image: NetworkImage(model.image!),
-    //             width: double.infinity,
-    //             height: 200.0,
-    //           ),
-    //
-    //           if (model.discount != 0)
-    //
-    //
-    //             Container(
-    //               color: Colors.red,
-    //               padding: EdgeInsets.symmetric(horizontal: 5.0),
-    //               child: Text(
-    //                 'DISCOUNT',
-    //                 style: TextStyle(
-    //                   fontSize: 9,
-    //                   color: Colors.white,
-    //                 ),
-    //               ),
-    //             ),
-    //         ],
-    //       ),
-    //       Padding(
-    //         padding: const EdgeInsets.all(12.0),
-    //         child: Column(
-    //           crossAxisAlignment: CrossAxisAlignment.start,
-    //
-    //           children: [
-    //             Text(
-    //               model.name!,
-    //               maxLines: 2,
-    //               overflow: TextOverflow.ellipsis,
-    //               style: TextStyle(
-    //                 fontSize: 14.0,
-    //                 height: 1.3,
-    //               ),
-    //
-    //             ),
-    //             SizedBox(height: 3,),
-    //             Row(
-    //               children:[
-    //
-    //                 Text(
-    //                   '${model.price!.round()}',
-    //                   style: TextStyle(
-    //                     fontSize: 12.0,
-    //                     color: defaultColor,
-    //                   ),
-    //                 ),
-    //                 SizedBox(width: 5.0,),
-    //
-    //                 if (model.discount != 0)
-    //
-    //                   Text(
-    //                     '${model.old_price!.round()}',
-    //                     style: TextStyle(
-    //                       fontSize: 10.0,
-    //                       color: Colors.grey,
-    //                       decoration: TextDecoration.lineThrough,
-    //                     ),
-    //                   ),
-    //                 Spacer(),
-    //                 IconButton(
-    //                   icon:CircleAvatar(
-    //                     backgroundColor:ShopCubit.get(context).favorites[model.id]! ? Colors.red : Colors.grey ,
-    //                     child : Icon(
-    //                       Icons.favorite_border,
-    //                       size: 14.0,
-    //                       color: Colors.white,
-    //                     ),
-    //                   ),
-    //                   onPressed: (){
-    //
-    //                     ShopCubit.get(context).changeFavorites(model.id!);
-    //
-    //                     print(model.id);
-    //                   },
-    //                 )
-    //
-    //
-    //               ],
-    //             ),
-    //           ],
-    //         ),
-    //       ),
-    //
-    //     ],
-    //   ),
-    // );
+
 
 
 

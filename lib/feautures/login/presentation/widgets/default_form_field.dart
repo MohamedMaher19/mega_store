@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store/core/utils/custom_text.dart';
 
 import '../../../../core/resources/color_manager.dart';
@@ -38,7 +39,7 @@ Widget defaultFormField(
       onChanged: onChanged,
       onTap: onTap,
       enabled: isClickable,
-      cursorHeight: 20.0,
+      cursorHeight: 20.0.h,
       decoration: InputDecoration(
         border: border,
         suffixIcon: suffix != null
@@ -50,7 +51,7 @@ Widget defaultFormField(
         labelText: label,
         labelStyle: TextStyle(
           fontFamily: 'Poppins',
-          fontSize: 12
+          fontSize: 12.sp
         ),
         prefixIcon: Icon(prefix),
       ),

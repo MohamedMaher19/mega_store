@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/utils/custom_text.dart';
 
@@ -22,21 +23,21 @@ class FaceGoogleButton extends StatelessWidget {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5),),
+            borderRadius: BorderRadius.circular(5.r),),
           primary: buttonColor,
 
-          minimumSize: Size(320, 65),
+          minimumSize: Size(320.w, 65.h),
         ),
         onPressed: onPressed,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children:[
             Image.asset(imagePath),
-            SizedBox(width: 60,),
+            SizedBox(width: 60.w,),
             TextUtils(
             fontFamily: fontFamily,
             text: text,
-            fontSize: 14,
+            fontSize: 14.sp,
             fontWeight: FontWeight.bold,
             color: textColor,
           ),

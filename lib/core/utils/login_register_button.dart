@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'custom_text.dart';
 
 
@@ -23,13 +24,13 @@ class LoginRegisterButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(5),),
           primary: buttonColor,
 
-          minimumSize: Size(320, 65),
+          minimumSize: Size(320.w, 65.h),
         ),
         onPressed: onPressed,
         child: TextUtils(
           fontFamily: fontFamily,
           text: text,
-          fontSize: 14,
+          fontSize: 14.sp,
           fontWeight: FontWeight.bold,
           color: textColor,
         ));

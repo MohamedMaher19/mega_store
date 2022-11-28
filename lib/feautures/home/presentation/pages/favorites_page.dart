@@ -1,26 +1,12 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mega_store/core/resources/assets_manager.dart';
 import 'package:mega_store/core/utils/appbar.dart';
 
 class FavortesPage extends StatelessWidget {
   FavortesPage({Key? key}) : super(key: key);
 
-  final myImges = [
-    'assets/images/image1.jpg',
-    'assets/images/image2.jpg',
-    'assets/images/image3.jpg',
-    'assets/images/image4.jpg',
-    'assets/images/markus-spiske-wL7pwimB78Q-unsplash.jpg',
-    'assets/images/alyssa-strohmann-TS--uNw-JqE-unsplash.jpg',
-    'assets/images/markus-spiske-wL7pwimB78Q-unsplash.jpg',
-    'assets/images/image1.jpg',
-    'assets/images/image2.jpg',
-    'assets/images/image3.jpg',
-    'assets/images/image4.jpg',
-    'assets/images/alyssa-strohmann-TS--uNw-JqE-unsplash.jpg',
-
-
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +22,9 @@ class FavortesPage extends StatelessWidget {
               scrollDirection: Axis.vertical,
               crossAxisCount: 2,
               shrinkWrap: true,
-              mainAxisSpacing:1.0 ,
-              crossAxisSpacing: 20.0,
-              childAspectRatio: 1 / 1.75 ,
+              mainAxisSpacing:1.0.h ,
+              crossAxisSpacing: 20.0.w,
+              childAspectRatio: 1 / 1.75.h ,
               physics: NeverScrollableScrollPhysics(),
               children: List.generate(myImges.length, (index) =>
                   Column(
@@ -54,7 +40,7 @@ class FavortesPage extends StatelessWidget {
                             fit: BoxFit.cover,
                           ),
                           Container(
-                              padding: EdgeInsets.symmetric(horizontal: 5.0,vertical: 5.0),
+                              padding: EdgeInsets.symmetric(horizontal: 5.0.w,vertical: 5.0.h),
                               child: Icon(Icons.delete_outline_rounded , color: Colors.white,)
                           ),
                         ],
@@ -68,12 +54,12 @@ class FavortesPage extends StatelessWidget {
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                              fontSize: 14.0,
-                              height: 1.3,
+                              fontSize: 14.0.sp,
+                              height: 1.3.h,
                             ),
 
                           ),
-                          SizedBox(height: 3,),
+                          SizedBox(height: 3.h,),
                           Text('\$ 299.90'),
                           Row(
                             children:[
@@ -81,17 +67,17 @@ class FavortesPage extends StatelessWidget {
                               Text(
                                 '\$ 299.90',
                                 style: TextStyle(
-                                  fontSize: 12.0,
+                                  fontSize: 12.0.sp,
                                   color: Colors.grey,
                                   decoration: TextDecoration.lineThrough,
 
                                 ),
                               ),
-                              SizedBox(width: 5.0,),
+                              SizedBox(width: 5.0.w,),
                               Text(
                                 '25% off',
                                 style: TextStyle(
-                                  fontSize: 10.0,
+                                  fontSize: 10.0.sp,
                                   color: Colors.red,
                                 ),
                               ),
